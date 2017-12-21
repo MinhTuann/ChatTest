@@ -64,7 +64,7 @@ public class ListActivity extends AppCompatActivity {
                     // Hủy đăng ký sự kiện khi đã lấy được thông tin Display name của User hiện tại.
                     API.firebaseRef.child("USERS").child(API.currentUid).removeEventListener(getCurrentUEventLisnter);
                 }
-                catch (java.lang.NullPointerException ex) {
+                catch (NullPointerException ex) {
                     Toast.makeText(ListActivity.this, ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
                     API.firebaseAuth.signOut();
                     Intent intent = new Intent(ListActivity.this, LoginActivity.class);
